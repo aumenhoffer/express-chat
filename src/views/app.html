@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuntius</title>
+
+    <link id="THEME" rel="stylesheet" href="/css/site_dark.css">
+
+    <link rel="stylesheet" href="/css/app.css">
+
+    <script src="/js/cloakGuard.js"></script>
+    <script src="/js/escapeHTML.js"></script>
+    <script src="/js/app.js"></script>
+</head>
+<body>
+    <div id="login_container" tabindex="0">
+        <div id="login_screen">
+            <h1>Nuntius</h1>
+            <form id="loginform">
+                <label for="username">Username:</label>
+                <input type="text" id="loginform-username" autocomplete="on" maxlength="30" value="Guest" ><br><br>
+                <label for="color">Color:</label>
+                <input type="color" id="loginform-color" value="#ff0000" autocomplete="on"><br><br>
+                <label for="avatar">Avatar URL:</label>
+                <input type="text" id="loginform-avatar" autocomplete="on"><br><br>
+                <input type="submit" value="Enter the chat"></input>
+            </form> 
+        </div>
+    </div>
+    <div id="loading_container">
+        <div id="loading_text">
+            <h2>Nuntius is loading</h2>
+            <p id="loading_text_details"></p>
+        </div>
+    </div>
+    <div id="app_container">
+        <div id="channel_container">
+            <div id="channel_info_bar">
+                <p style="margin-left: 5px;">Online users: <i id="onlineindividuals"></i></p>
+            </div>
+            <div id="message_input_bar">
+                <button id="attachment_button" class="input_bar_button">
+                </button>
+                <textarea type="text" id="chat_input" maxlength="2000" placeholder="Your message goes here..."></textarea>
+                <button id="send_button" class="input_bar_button">
+                </button>
+                <div id="attachment_menu">
+                    <h3>Attach Image</h3>
+                    <p>Images can be attached to the message here. You can only attach one image per message. Clearing the textbox deletes the attachment.</p>
+                    <label for="color">Image URL: </label><input type="text" id="attachment-url"><br>
+                    <img id="img_embed_preview" src=#>
+                </div>
+            </div>
+            <div id="channel_content">
+                <div class="message" style="display: none;">
+                    <div class="avatar_holder" style="border-color:rgb(255, 255, 255)">
+                        <img src="" style="border-color: rgb(255, 255, 255)">
+                    </div>
+                    <div class="message_content">
+                        <p class="username" style="color:rgb(255, 255, 255)">System</p>
+                    </div>
+                </div>
+                <div id="channel_content_bottom"> </div>
+            </div>
+        </div>
+        <div id="side_panel_buttons">
+        </div>
+        <div id="side_panel">
+            <div id="side_panel_content">
+                <h3>Settings</h3>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="USERNAME" onchange="changeVar(this)"><br/><br/>
+                <label for="avatar">Avatar URL:</label>
+                <input type="text" id="avatar" name="AVATAR" onchange="changeVar(this)"><br/><br/>
+                <label for="color">Color:</label>
+                <input type="text" id="color" name="COLOR" onchange="changeVar(this)">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

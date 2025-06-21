@@ -1,0 +1,364 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+html,
+body {
+    max-width: 100vw;
+    max-height: 100vh;
+    overflow: hidden;
+}
+
+#app_container {
+    display: none;
+    max-width: 100vw;
+    max-height: 100vh;
+    background-image: var(--bg-image);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#channel_container {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#channel_info_bar {
+    background-color: var(--panel-bg-color);
+    border-bottom: solid 1px color-mix(in srgb, var(--fg-color), transparent 50%);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    position: absolute;
+    width: 100%;
+    height: 50px;
+    z-index: 10;
+    top: 0;
+    overflow: hidden;
+}
+
+#message_input_bar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background-color: var(--panel-bg-color);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    min-height: 50px;
+    max-height: 50%;
+    bottom: 0;
+    border-top: solid 1px color-mix(in srgb, var(--fg-color), transparent 50%);
+    padding-right: 5px;
+    padding-left: 5px;
+}
+
+#attachment_menu
+{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: var(--panel-bg-color);
+    border: solid 1px color-mix(in srgb, var(--fg-color), transparent 50%);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    max-width: 75%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-transform: translateY(100%);
+        -ms-transform: translateY(100%);
+            transform: translateY(100%);
+    opacity: 0;
+    -webkit-backdrop-filter: brightness(60%) blur(10px);
+            backdrop-filter: brightness(60%) blur(10px);
+}
+
+#attachment_menu img {
+    border-radius: 10px;
+    height: 100px;
+    border: solid 1px var(--fg-color);
+    margin: 5px;
+}
+
+.input_bar_button
+{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    color: white;
+    font-size: 20px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    height: 32px;
+    width: 32px;
+    border: solid 1px color-mix(in srgb, var(--fg-color), transparent 50%);
+    background-color: var(--panel-bg-color);
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+#attachment_button
+{
+    -webkit-filter: brightness(50%);
+            filter: brightness(50%);
+    background-image: var(--icon-plus);
+    margin-left: 5px;
+}
+
+#send_button
+{
+    -webkit-filter: brightness(75%);
+            filter: brightness(75%);
+    background-image: var(--icon-send);
+    margin-right: 15px;
+}
+
+#send_button:hover
+{
+	-webkit-filter: brightness(100%);
+	        filter: brightness(100%);
+}
+
+.input_bar_button:hover
+{
+    cursor:pointer;
+}
+
+#chat_input {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-right: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 0px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    resize: none;
+    font-size: var(--text-size);
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none;
+    background-color: var(--panel-bg-color);
+    color: var(--fg-color);
+    border-radius: 15px;
+    border: solid 1px color-mix(in srgb, var(--fg-color), transparent 50%);
+}
+
+#channel_content {
+    padding-top: 60px;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overflow-wrap: anywhere;
+}
+
+.message {
+    background-color: var(--panel-bg-color);
+    margin-right: 20px;
+    margin-left: 20px;
+    border-radius: 3px;
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.2);
+    color: var(--fg-color);
+    font-weight: bold;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    transition: all 0.2s;
+    -webkit-backdrop-filter: brightness(60%) blur(5px);
+            backdrop-filter: brightness(60%) blur(5px);
+    min-height: 75px;
+}
+
+.message:hover {
+    margin-left: 25px;
+}
+
+.message:hover:not(.pending_message) {
+    -webkit-backdrop-filter: brightness(100%) blur(5px);
+            backdrop-filter: brightness(100%) blur(5px);
+}
+
+.pending_message {
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+}
+
+.message .username {
+    margin-top: 7px;
+    margin-bottom: 5px;
+    font-size: calc(var(--text-size));
+}
+
+.message p {
+    font-size: var(--text-size);
+    margin-top: 0;
+    font-weight: 900;
+    margin-right: 5px;
+}
+
+.message img {
+    border-radius: 10px;
+    height: 300px;
+    border: solid 2px var(--fg-color);
+    margin: 5px;
+}
+
+.avatar_holder {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-right: 5px;
+    border-right: solid 3px;
+    width: 75px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
+
+.avatar_holder img {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    border: solid 2px;
+}
+
+#channel_content_bottom {
+    margin-top: 20px;
+    text-align: center;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+#login_container {
+    background-image: var(--panel-bg-image);
+    -webkit-backdrop-filter: blur(20px);
+            backdrop-filter: blur(20px);
+    z-index: 10;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+
+#login_screen {
+    padding: 30px;
+    position: absolute;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    background-color: var(--panel-bg-color);
+    border: solid 1px var(--fg-color);
+    border-radius: 5px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+}
+
+#login_screen form {
+    padding: 30px;
+}
+
+#login_screen label {
+    padding-right: 10px;
+}
+
+#login_screen input {
+    background-color: var(--panel-bg-color);
+    border: solid 1px var(--fg-color);
+    font-size: 15px;
+    padding: 5px;
+    color: var(--fg-color);
+}
+
+#loading_container {
+    display: none;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: var(--panel-bg-color);
+    text-align: center;
+}
+
+#side_panel_buttons {
+    overflow: hidden;
+    width: 0px;
+    background-color: var(--panel-bg-color);
+    -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    z-index: 3;
+}
+
+#side_panel {
+    display: none;
+    padding-left: 20px;
+    overflow: hidden;
+    position: fixed;
+    height: 100%;
+    width: 60%;
+    top: 0;
+    right: 0;
+    background-image: var(--panel-bg-image);
+    -webkit-backdrop-filter: blur(15px) saturate(0);
+            backdrop-filter: blur(15px) saturate(0);
+    -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    z-index: 2;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+}

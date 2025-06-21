@@ -1,0 +1,13 @@
+{
+    "port":8080,
+
+    "passwordRequired":false,
+    "password":"password",
+
+    "minUsernameLength":3,
+    "maxUsernameLength":30,
+    "maxAvatarUrlLength":2000,
+
+    "maxMessageLength":3000,
+    "minMessageLength":1
+}

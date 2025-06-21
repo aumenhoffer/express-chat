@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <head>
+        <link rel="stylesheet" href="/css/site.css">
+        <script>
+            window.onload = function() {
+                //Remove Javascript notice if this works
+                document.getElementById("js-notice").style.display = "none";
+
+                //Get where to redirect to
+                var redirectTo = new URLSearchParams(window.location.search).get('redirect');
+                if(!redirectTo) return document.getElementById("noredirect-notice").style.display = "block"
+                redirectTo = decodeURI(redirectTo);
+                var cw = window.open()
+
+                if(!cw)
+                {
+                    document.getElementById("cloak-notice").style.display = "block";
+                }
+
+                //Create iframe
+                var ciframe = cw.document.createElement('iframe');
+                ciframe.style.width = "100%";
+                ciframe.style.height = "100%";
+                ciframe.style.border = "none";
+
+                console.log("redirecting to " + redirectTo)
+                ciframe.src = redirectTo;
+                cw.document.title = "Chat app" + ` | CLOAKED`
+                cw.document.body.appendChild(ciframe);
+                cw.document.body.style.margin = 0;
+
+                window.location.href = "https://google.com" //Redirect to somewhere nice if we can't windown.close() it.
+            }
+        </script>
+    </head>
+    <body>
+        <div id="js-notice">
+        <h1>You need to enable javascript to continue</h1>
+        </div>
+
+        <div id="cloak-notice" style="display: none;">
+            <h2>Cloaking Failed</h2>
+            <p>Please enable popups</p>
+            <p>You might need to reload the page!</p>
+        </div>
+
+        <div id="noredirect-notice" style="display: none;">
+            <h1>Redirect parameter missing</h1>
+        </div>
+
+    </body>
+</html>

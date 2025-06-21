@@ -1,0 +1,15 @@
+{
+  "name": "nuntius",
+  "version": "1.0.0",
+  "description": "Self-hosted secure message app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express.js": "^1.0.0",
+    "ws": "^8.18.0"
+  }
+}
