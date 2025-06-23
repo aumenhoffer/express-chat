@@ -1,3 +1,5 @@
+## Express-chat
+
 I have created this application in sophomore year for personal use and I no longer maintain it actively. This software comes with no warranty and I am not liable for any damages caused by it.
 
 The primary goal of this application is to provide a lightweight and easily self-hostable chat application that circumvents censorship.
@@ -16,6 +18,13 @@ The primary goal of this application is to provide a lightweight and easily self
 - No proxies for attachment URLs. Clients load third party content directly.
 - Known to break on Safari
 - Might require a theme with blur disabled on low-end systems for a smooth experience
+
+### Screenshots
+Default dark (`style_dark.css`)
+![dark_mode_screenshot](https://github.com/aumenhoffer/express-chat/blob/main/screenshots/dark.png?raw=true)
+
+Example customized `style.css` *(Not included)*
+![custom_screenshot](https://github.com/aumenhoffer/express-chat/blob/main/screenshots/light.png?raw=true)
 
 ### Usage
 1. Have git, node.js and npm isntalled
